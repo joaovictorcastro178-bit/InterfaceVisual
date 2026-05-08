@@ -157,21 +157,21 @@ public class GravidadeRelativa extends javax.swing.JFrame {
         String planeta = jBoxPlaneta.getSelectedItem().toString();
         
         if(planeta.equals("Mercúrio")){
-            resultado = peso * 0.37;
+            resultado = (peso/10) * 0.37;
         }else if (planeta.equals("Vênus")){
-            resultado = peso * 0.88;
+            resultado = (peso/10) * 0.88;
         }else if (planeta.equals("Marte")){
-            resultado = peso * 0.38;
+            resultado = (peso/10) * 0.38;
         }else if (planeta.equals("Júpiter")){
-            resultado = peso * 2.64;
+            resultado = (peso/10) * 2.64;
         }else if (planeta.equals("Saturno")){
-            resultado = peso * 1.15;
+            resultado = (peso/10) * 1.15;
         }else if (planeta.equals("Urano")){
-            resultado = peso * 1.17;
+            resultado = (peso/10) * 1.17;
         }else if (planeta.equals("Netuno")){
-            resultado = peso * 1.18;
+            resultado = (peso/10) * 1.18;
         }else if (planeta.equals("Lua")){
-            resultado = peso * 1.6;
+            resultado = (peso/10) * 1.6;
             //Codei no lugar errado :)
         }
         JOptionPane.showMessageDialog(null,
