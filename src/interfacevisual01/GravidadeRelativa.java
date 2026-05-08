@@ -4,6 +4,8 @@
  */
 package interfacevisual01;
 
+import javax.swing.JComboBox;
+
 /**
  *
  * @author 884648
@@ -29,12 +31,12 @@ public class GravidadeRelativa extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jButtonGerar = new javax.swing.JButton();
         jPeso = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jBoxPlaneta = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         jLabel4.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -46,7 +48,17 @@ public class GravidadeRelativa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+
+        jButtonGerar.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonGerar.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jButtonGerar.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonGerar.setText("Gerar");
+        jButtonGerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGerarActionPerformed(evt);
+            }
+        });
 
         jPeso.setBackground(new java.awt.Color(255, 255, 255));
         jPeso.addActionListener(new java.awt.event.ActionListener() {
@@ -55,10 +67,15 @@ public class GravidadeRelativa extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Lua", "Sagittarius A*" }));
+        jBoxPlaneta.setBackground(new java.awt.Color(255, 255, 255));
+        jBoxPlaneta.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        jBoxPlaneta.setForeground(new java.awt.Color(0, 0, 0));
+        jBoxPlaneta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Terra", "Marte", "Júpiter", "Saturno", "Urano", "Netuno", "Lua", "Sagittarius A*" }));
+        jBoxPlaneta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBoxPlanetaActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -71,11 +88,6 @@ public class GravidadeRelativa extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Escolha o planeta:");
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Gerar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,9 +103,9 @@ public class GravidadeRelativa extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBoxPlaneta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
-                            .addComponent(jButton1))))
+                            .addComponent(jButtonGerar))))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -108,9 +120,9 @@ public class GravidadeRelativa extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBoxPlaneta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(jButton1)
+                .addComponent(jButtonGerar)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -129,8 +141,26 @@ public class GravidadeRelativa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPesoActionPerformed
-        jPeso.getText();
+        
     }//GEN-LAST:event_jPesoActionPerformed
+
+    private void jBoxPlanetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBoxPlanetaActionPerformed
+        
+        if(planeta.equals("Mercúrio")){
+            resultado = peso
+        }
+    }//GEN-LAST:event_jBoxPlanetaActionPerformed
+
+    private void jButtonGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarActionPerformed
+        double peso;
+        double resultado = 0;
+        
+        peso = Double.parseDouble(jPeso.getText());
+        
+        
+
+
+    }//GEN-LAST:event_jButtonGerarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,8 +198,8 @@ public class GravidadeRelativa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jBoxPlaneta;
+    private javax.swing.JButton jButtonGerar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
