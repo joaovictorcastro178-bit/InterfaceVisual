@@ -172,14 +172,14 @@ public class GravidadeRelativa extends javax.swing.JFrame {
             resultado = (peso/10) * 8.69;
         }else if (planeta.equals("Netuno")){
             resultado = (peso/10) * 11.15;
-        }else if (planeta.equals("Lua")){
+        }else if (planeta.equals("Lua")){ //Codei no lugar errado :)
             resultado = (peso/10) * 1.6;
         }else if (planeta.equals("Sagittarius A*")){
-            resultado = (peso/10) * 4000000000.0;
-            //Codei no lugar errado :)
+            JOptionPane.showMessageDialog(null, "Parabéns! Você foi espaguetificado.");
+         //EasterEggs pq sim   
         }
         JOptionPane.showMessageDialog(null,
-                "Seu peso em" + planeta + "é" + resultado + "kg");
+                "Seu peso em " + planeta + " é " + resultado + " kg");
             //Coisa Linda <3
     }//GEN-LAST:event_jButtonGerarActionPerformed
 
