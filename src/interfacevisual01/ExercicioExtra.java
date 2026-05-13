@@ -53,39 +53,39 @@ public class ExercicioExtra extends javax.swing.JFrame {
                 break;
             case "Vagabundo":
                 mostrarClasse("src/img/vagabundo-Photoroom.png");
-                mostrarClasse("src/img/StatusVagabundo.png");
+                mostrarStatus("src/img/StatusVagabundo.png");
                 break;
             case "Guerreiro":
                 mostrarClasse("src/img/guerreiro-Photoroom.png");
-                mostrarClasse("src/img/StatusGuerreiro.png");
+                mostrarStatus("src/img/StatusGuerreiro.png");
                 break;
             case "Samurai":
                 mostrarClasse("src/img/samurai-Photoroom.png");
-                mostrarClasse("src/img/StatusSamurai.png");
+                mostrarStatus("src/img/StatusSamurai.png");
                 break;
             case "Heroi":
                 mostrarClasse("src/img/heroi-Photoroom.png");
-                mostrarClasse("src/img/StatusHeroi.png");
+                mostrarStatus("src/img/StatusHeroi.png");
                 break;
             case "Astrologo":
                 mostrarClasse("src/img/astrologo-Photoroom.png");
-                mostrarClasse("src/img/StatusAstrologo.png");
+                mostrarStatus("src/img/StatusAstrologo.png");
                 break;
             case "Profeta":
                 mostrarClasse("src/img/profeta-Photoroom.png");
-                mostrarClasse("src/img/StatusTioDoCesar.png");
+                mostrarStatus("src/img/StatusTioDoCesar.png");
                 break;
             case "Prisioneiro":
                 mostrarClasse("src/img/prisioneiro-Photoroom.png");
-                mostrarClasse("src/img/StatusPrisioneiro.png");
+                mostrarStatus("src/img/StatusPrisioneiro.png");
                 break;
             case "Confessor":
                 mostrarClasse("src/img/confessor-Photoroom.png");
-                mostrarClasse("src/img/StatusConfessor.png");
+                mostrarStatus("src/img/StatusConfessor.png");
                 break;
             case "Bandido":
                 mostrarClasse("src/img/bandido-Photoroom.png");
-                mostrarClasse("src/img/StatusBandido.png");
+                mostrarStatus("src/img/StatusBandido.png");
                 break;
             default:
                 
@@ -119,6 +119,8 @@ public class ExercicioExtra extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jBGDificuldade = new javax.swing.ButtonGroup();
         jBGDicas = new javax.swing.ButtonGroup();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jlNomePersonagem = new javax.swing.JLabel();
@@ -138,8 +140,30 @@ public class ExercicioExtra extends javax.swing.JFrame {
         jCBGenero = new javax.swing.JComboBox<>();
         jlblItem = new javax.swing.JLabel();
         jlblStatus = new javax.swing.JLabel();
-        jlDificuldade1 = new javax.swing.JLabel();
+        jlStatus = new javax.swing.JLabel();
         jlblClasse = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("SouthPark ");
@@ -201,10 +225,8 @@ public class ExercicioExtra extends javax.swing.JFrame {
         jCBGenero.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jCBGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminina" }));
 
-        jlblItem.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        jlDificuldade1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jlDificuldade1.setText("Dificuldade:");
+        jlStatus.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlStatus.setText("Status");
 
         jlblClasse.setForeground(new java.awt.Color(153, 153, 153));
 
@@ -223,6 +245,18 @@ public class ExercicioExtra extends javax.swing.JFrame {
                             .addComponent(jlVoz))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jlGenero)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jCBGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCBClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,42 +272,28 @@ public class ExercicioExtra extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addComponent(jtNome))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jlGenero)
-                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlDificuldade)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jCBClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jCBFacil)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jCBMedio)
+                                        .addGap(47, 47, 47)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jCBGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(86, 86, 86))))
+                                            .addComponent(jlStatus)
+                                            .addComponent(jCBDificil))))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jlDificuldade)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jCBFacil)
-                        .addGap(38, 38, 38)
-                        .addComponent(jCBMedio)
-                        .addGap(47, 47, 47)
-                        .addComponent(jCBDificil))))
+                                .addGap(35, 35, 35)
+                                .addComponent(jlblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(jlblClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSVoz, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jlDificuldade1)))
+                .addComponent(jSVoz, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jlblClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jlblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,19 +306,14 @@ public class ExercicioExtra extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlClasse)
                     .addComponent(jCBClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jlItem)
-                            .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCBGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlGenero)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlItem)
+                    .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlGenero))
                 .addGap(14, 14, 14)
                 .addComponent(jlVoz)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -310,13 +325,14 @@ public class ExercicioExtra extends javax.swing.JFrame {
                     .addComponent(jCBFacil)
                     .addComponent(jCBMedio)
                     .addComponent(jCBDificil))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jlDificuldade1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jlblStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
-                    .addComponent(jlblClasse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(28, 28, 28)
+                .addComponent(jlStatus)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jlblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlblClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 30, Short.MAX_VALUE)
                 .addComponent(jlDificuldade2)
                 .addGap(25, 25, 25))
         );
@@ -342,7 +358,7 @@ public class ExercicioExtra extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -402,15 +418,17 @@ public class ExercicioExtra extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCBMedio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSlider jSVoz;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel jlClasse;
     private javax.swing.JLabel jlDificuldade;
-    private javax.swing.JLabel jlDificuldade1;
     private javax.swing.JLabel jlDificuldade2;
     private javax.swing.JLabel jlGenero;
     private javax.swing.JLabel jlItem;
     private javax.swing.JLabel jlNomePersonagem;
+    private javax.swing.JLabel jlStatus;
     private javax.swing.JLabel jlVoz;
     private javax.swing.JLabel jlblClasse;
     private javax.swing.JLabel jlblItem;
