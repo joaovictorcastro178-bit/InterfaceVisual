@@ -35,39 +35,57 @@ public class ExercicioExtra extends javax.swing.JFrame {
 
         jlblItem.setIcon(new ImageIcon(imagem));
     }
+    public void mostrarStatus(String caminhoImagem) {
+        // Cria ícone da imagem
+        ImageIcon icon = new ImageIcon(caminhoImagem);
+        // Redimensiona imagem para tamanho fixo
+        Image imagem = icon.getImage().getScaledInstance(jlblStatus.getWidth(), jlblStatus.getHeight(), 1);
+
+        jlblStatus.setIcon(new ImageIcon(imagem));
+    }
     public void classeIMG(){
         
         
         switch (jCBClasse.getSelectedItem().toString()) {
             case "Cavaleiro":
                 mostrarClasse("src/img/cavaleiro-Photoroom.png");
+                mostrarStatus("src/img/Status Cavaleiro.png");
                 break;
             case "Vagabundo":
                 mostrarClasse("src/img/vagabundo-Photoroom.png");
+                mostrarClasse("src/img/StatusVagabundo.png");
                 break;
             case "Guerreiro":
                 mostrarClasse("src/img/guerreiro-Photoroom.png");
+                mostrarClasse("src/img/StatusGuerreiro.png");
                 break;
             case "Samurai":
                 mostrarClasse("src/img/samurai-Photoroom.png");
+                mostrarClasse("src/img/StatusSamurai.png");
                 break;
             case "Heroi":
                 mostrarClasse("src/img/heroi-Photoroom.png");
+                mostrarClasse("src/img/StatusHeroi.png");
                 break;
             case "Astrologo":
                 mostrarClasse("src/img/astrologo-Photoroom.png");
+                mostrarClasse("src/img/StatusAstrologo.png");
                 break;
             case "Profeta":
                 mostrarClasse("src/img/profeta-Photoroom.png");
+                mostrarClasse("src/img/StatusTioDoCesar.png");
                 break;
             case "Prisioneiro":
                 mostrarClasse("src/img/prisioneiro-Photoroom.png");
+                mostrarClasse("src/img/StatusPrisioneiro.png");
                 break;
             case "Confessor":
                 mostrarClasse("src/img/confessor-Photoroom.png");
+                mostrarClasse("src/img/StatusConfessor.png");
                 break;
             case "Bandido":
                 mostrarClasse("src/img/bandido-Photoroom.png");
+                mostrarClasse("src/img/StatusBandido.png");
                 break;
             default:
                 
@@ -99,17 +117,29 @@ public class ExercicioExtra extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator1 = new javax.swing.JSeparator();
+        jBGDificuldade = new javax.swing.ButtonGroup();
+        jBGDicas = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jlNomePersonagem = new javax.swing.JLabel();
         jtNome = new javax.swing.JTextField();
-        jlNomePersonagem1 = new javax.swing.JLabel();
+        jlClasse = new javax.swing.JLabel();
         jCBClasse = new javax.swing.JComboBox<>();
-        jlNomePersonagem2 = new javax.swing.JLabel();
+        jlItem = new javax.swing.JLabel();
         jCBItem = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
-        jlblClasse = new javax.swing.JLabel();
+        jCBFacil = new javax.swing.JCheckBox();
+        jlDificuldade = new javax.swing.JLabel();
+        jCBMedio = new javax.swing.JCheckBox();
+        jCBDificil = new javax.swing.JCheckBox();
+        jlVoz = new javax.swing.JLabel();
+        jSVoz = new javax.swing.JSlider();
+        jlDificuldade2 = new javax.swing.JLabel();
+        jlGenero = new javax.swing.JLabel();
+        jCBGenero = new javax.swing.JComboBox<>();
         jlblItem = new javax.swing.JLabel();
+        jlblStatus = new javax.swing.JLabel();
+        jlDificuldade1 = new javax.swing.JLabel();
+        jlblClasse = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("SouthPark ");
@@ -123,8 +153,8 @@ public class ExercicioExtra extends javax.swing.JFrame {
         jlNomePersonagem.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jlNomePersonagem.setText("Nome:");
 
-        jlNomePersonagem1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jlNomePersonagem1.setText("Classe:");
+        jlClasse.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlClasse.setText("Classe:");
 
         jCBClasse.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jCBClasse.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cavaleiro", "Vagabundo", "Guerreiro", "Samurai", "Heroi", "Astrologo", "Profeta", "Prisioneiro", "Confessor", "Bandido" }));
@@ -134,8 +164,8 @@ public class ExercicioExtra extends javax.swing.JFrame {
             }
         });
 
-        jlNomePersonagem2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jlNomePersonagem2.setText("Item:");
+        jlItem.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlItem.setText("Item:");
 
         jCBItem.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jCBItem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Luneta", "Jarro Quebrado", "Frasco de Perfumista" }));
@@ -145,6 +175,39 @@ public class ExercicioExtra extends javax.swing.JFrame {
             }
         });
 
+        jBGDificuldade.add(jCBFacil);
+        jCBFacil.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jCBFacil.setText("Fácil");
+
+        jlDificuldade.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlDificuldade.setText("Dificuldade:");
+
+        jBGDificuldade.add(jCBMedio);
+        jCBMedio.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jCBMedio.setText("Médio");
+
+        jBGDificuldade.add(jCBDificil);
+        jCBDificil.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jCBDificil.setText("Difícil");
+
+        jlVoz.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlVoz.setText("Voz:");
+
+        jlDificuldade2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+
+        jlGenero.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlGenero.setText("Gênero:");
+
+        jCBGenero.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jCBGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminina" }));
+
+        jlblItem.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jlDificuldade1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jlDificuldade1.setText("Dificuldade:");
+
+        jlblClasse.setForeground(new java.awt.Color(153, 153, 153));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -152,25 +215,65 @@ public class ExercicioExtra extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jlNomePersonagem)
-                            .addGap(23, 23, 23))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jlNomePersonagem1)
-                            .addGap(18, 18, 18)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlNomePersonagem2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jtNome)
-                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCBClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 222, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(336, 336, 336)
+                                .addComponent(jlDificuldade2))
+                            .addComponent(jlVoz))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jlNomePersonagem)
+                                            .addGap(23, 23, 23))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jlClasse)
+                                            .addGap(18, 18, 18)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jlItem)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addComponent(jtNome))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jlGenero)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jCBClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jCBGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(86, 86, 86))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jlDificuldade)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCBFacil)
+                        .addGap(38, 38, 38)
+                        .addComponent(jCBMedio)
+                        .addGap(47, 47, 47)
+                        .addComponent(jCBDificil))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSVoz, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jlDificuldade1)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jlblClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jlblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,40 +284,41 @@ public class ExercicioExtra extends javax.swing.JFrame {
                     .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlNomePersonagem1)
+                    .addComponent(jlClasse)
                     .addComponent(jCBClasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlNomePersonagem2)
-                    .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        jlblClasse.setForeground(new java.awt.Color(153, 153, 153));
-
-        jlblItem.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jlblClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlItem)
+                            .addComponent(jCBItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCBGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlGenero)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jlblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlblClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(jlVoz)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSVoz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jlDificuldade)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBFacil)
+                    .addComponent(jCBMedio)
+                    .addComponent(jCBDificil))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jlDificuldade1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jlblStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                    .addComponent(jlblClasse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlDificuldade2)
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -229,9 +333,7 @@ public class ExercicioExtra extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(11, Short.MAX_VALUE))))
+                        .addGap(0, 26, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,10 +341,8 @@ public class ExercicioExtra extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pack();
@@ -292,17 +392,29 @@ public class ExercicioExtra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup jBGDicas;
+    private javax.swing.ButtonGroup jBGDificuldade;
     private javax.swing.JComboBox<String> jCBClasse;
+    private javax.swing.JCheckBox jCBDificil;
+    private javax.swing.JCheckBox jCBFacil;
+    private javax.swing.JComboBox<String> jCBGenero;
     private javax.swing.JComboBox<String> jCBItem;
+    private javax.swing.JCheckBox jCBMedio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JSlider jSVoz;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jlClasse;
+    private javax.swing.JLabel jlDificuldade;
+    private javax.swing.JLabel jlDificuldade1;
+    private javax.swing.JLabel jlDificuldade2;
+    private javax.swing.JLabel jlGenero;
+    private javax.swing.JLabel jlItem;
     private javax.swing.JLabel jlNomePersonagem;
-    private javax.swing.JLabel jlNomePersonagem1;
-    private javax.swing.JLabel jlNomePersonagem2;
+    private javax.swing.JLabel jlVoz;
     private javax.swing.JLabel jlblClasse;
     private javax.swing.JLabel jlblItem;
+    private javax.swing.JLabel jlblStatus;
     private javax.swing.JTextField jtNome;
     // End of variables declaration//GEN-END:variables
 }
